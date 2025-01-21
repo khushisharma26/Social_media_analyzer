@@ -1,44 +1,17 @@
-const express = require("express");
-const multer = require("multer");
-const pdfParse = require("pdf-parse");
-const Tesseract = require("tesseract.js");
-const cors = require("cors");
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
-const app = express();
-const upload = multer();
-app.use(cors());
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 
-app.post("/analyze", upload.array("files"), async (req, res) => {
-  const files = req.files;
-  let extractedText = "";
-
-  if (!files || files.length === 0) {
-    return res.status(400).send({ error: "No files uploaded" });
-  }
-
-  for (const file of files) {
-    const fileType = file.mimetype;
-    if (fileType === "application/pdf") {
-      try {
-        const text = await pdfParse(file.buffer);
-        extractedText += text.text + "\n";
-      } catch (err) {
-        console.error("PDF parsing error:", err);
-      }
-    } else if (fileType.startsWith("image/")) {
-      try {
-        const { data: { text } } = await Tesseract.recognize(file.buffer, "eng");
-        extractedText += text + "\n";
-      } catch (err) {
-        console.error("OCR error:", err);
-      }
-    } else {
-      extractedText += `Unsupported file type: ${fileType}\n`;
-    }
-  }
-
-  res.send({ text: extractedText });
-});
-
-const PORT = 5000;
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
