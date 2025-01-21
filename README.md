@@ -1,96 +1,70 @@
-# Social_media_analyzer
-The Social Media Analyzer is a web-based application that allows users to upload PDF, image files and extracts text from them. Built using React for the frontend and Node.js with Express for the backend, the app leverages the pdf-parse library for PDF parsing and Tesseract.js for Optical Character Recognition (OCR) on image files.
-Features
-Drag-and-drop or file picker interface for uploading files.
-Extracts text from:
-PDF Files: Maintains text formatting.
-Image Files: Uses Optical Character Recognition (OCR) to extract text.
-Loading indicator during the file processing phase.
-Displays extracted text in a clean, readable format.
-Technologies Used
-Frontend
-React: User interface development.
-Dropzone.js: For drag-and-drop file uploads.
-Axios: For HTTP requests to the backend.
-Backend
-Node.js and Express: Server and API development.
-Multer: For handling file uploads.
-pdf-parse: For extracting text from PDF files.
-Tesseract.js: For OCR processing of image files.
-Setup and Installation
-Prerequisites
-Node.js and npm installed on your system.
-A code editor like Visual Studio Code.
-Steps to Run the Project
-Clone the Repository:
+# Getting Started with Create React App
 
-bash
-Copy
-Edit
-git clone https://github.com/your-username/document-text-extractor.git
-cd document-text-extractor
-Backend Setup:
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Navigate to the backend folder and install dependencies:
-bash
-Copy
-Edit
-cd backend
-npm install
-Start the server:
-bash
-Copy
-Edit
-node index.js
-Server runs on http://localhost:5000/.
-Frontend Setup:
+## Available Scripts
 
-Navigate to the frontend folder and install dependencies:
-bash
-Copy
-Edit
-cd frontend
-npm install
-Start the React app:
-bash
-Copy
-Edit
-npm start
-App runs on http://localhost:3000/.
-Usage
-Open the app in your browser (http://localhost:3000/).
-Drag and drop or select files (PDFs or images).
-Click on the "Analyze" button to extract text.
-View the extracted text in the app.
-Project Structure
-bash
-Copy
-Edit
-document-text-extractor/
-├── backend/
-│   ├── index.js         # Backend server code
-│   ├── package.json     # Backend dependencies
-│
-├── frontend/
-│   ├── src/
-│   │   ├── App.js       # React application logic
-│   │   ├── index.js     # React entry point
-│   ├── package.json     # Frontend dependencies
-│
-├── README.md            # Project documentation
-Screenshots
-File Upload Interface
+In the project directory, you can run:
 
-Extracted Text Display
+### `npm start`
 
-Future Enhancements
-Add support for additional file formats like DOCX.
-Multi-language OCR support.
-Improved UI/UX for better user experience.
-Enhanced error handling and notifications.
-Contributing
-Contributions are welcome! Please fork the repository and submit a pull request.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
+### `npm test`
+
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
